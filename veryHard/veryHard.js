@@ -18,7 +18,7 @@ function changeMaker(denom, amount) {
             }
                 // This statement subtracts the current denomination, denom[i], from our amount but also recurs itself by subtracting 1 from i so that when the funtion repeats, it will continue to use the same index to do this calculation until one of the former conditions are met.
             else if (amount % denom[i] !== 0) {
-               if (denom.length === 1){
+               if (i === denom.length - 1){
                     return -1;
                 } else {
                     amount -= denom[i];
@@ -33,5 +33,5 @@ function changeMaker(denom, amount) {
 
 console.log(changeMaker([100, 50, 25, 10, 5, 1], 201));
 console.log(changeMaker([6, 3, 4, 2, 1, 9], 53));
-console.log(changeMaker([2], 3))
+console.log(changeMaker([2, 4], 3))
 
